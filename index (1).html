@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immobilier Plateaux Togo</title>
+<meta name="description" content="Terrains, maisons et locaux à vendre ou à louer dans la région des Plateaux, Togo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;color:#17201B;background:#F4F6F2;line-height:1.5}
+a{color:#1F4D3A}
+a:hover{color:#A8551A}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:8px;font-weight:700;text-decoration:none}
+.btn-primary{background:#1F4D3A;color:#fff}
+.btn-primary:hover{background:#17392B;color:#fff}
+.btn-accent{background:#A8551A;color:#fff}
+.btn-accent:hover{background:#8C4413;color:#fff}
+.btn-outline-light{border:2px solid #fff;color:#fff}
+.btn-outline-light:hover{background:#fff;color:#1F4D3A}
+.btn-outline{border:2px solid #1F4D3A;color:#1F4D3A;min-height:44px}
+.btn-outline:hover{background:#1F4D3A;color:#fff}
+header{background:#fff;border-bottom:1px solid #DCE3DD}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:22px;color:#1F4D3A;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px}
+nav a{font-weight:500;text-decoration:none;color:#17201B;min-height:44px;display:inline-flex;align-items:center}
+nav a.cta{font-weight:700;color:#fff;background:#1F4D3A;border-radius:8px;padding:0 20px}
+nav a.cta:hover{background:#17392B;color:#fff}
+.hero{background:#1F4D3A;color:#fff}
+.hero .wrap{padding-top:72px;padding-bottom:80px;display:flex;flex-direction:column;gap:24px}
+.eyebrow{margin:0;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F0D3AE}
+.hero h1{max-width:760px;font-size:clamp(34px,6vw,60px);line-height:1.08}
+.hero p.lead{margin:0;max-width:620px;font-size:18px;color:#E3EBE5}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.section-title{font-size:clamp(28px,4vw,40px);color:#1F4D3A}
+#biens .wrap{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:column;gap:28px}
+.head-row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.count{margin:0;font-weight:500;color:#4A5750}
+.filters{display:flex;flex-direction:column;gap:14px}
+.filter-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.filter-label{font-weight:700;min-width:56px}
+.chip{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #1F4D3A;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;background:#fff;color:#1F4D3A}
+.chip[aria-pressed="true"]{background:#1F4D3A;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.card{background:#fff;border:1px solid #DCE3DD;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.photo{height:180px;background:#DCE6DE;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#3F5247;font-size:14px;font-weight:500}
+.photo img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.tag{align-self:flex-start;background:#F3E3D2;color:#7A3B0E;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
+.card h3{font-size:22px}
+.place{margin:0;display:flex;align-items:center;gap:6px;color:#4A5750}
+.meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:auto;padding-top:4px}
+.meta .price{font-weight:700;color:#1F4D3A}
+.empty{background:#fff;border:1px dashed #BFCBC3;border-radius:12px;padding:32px 20px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.empty p{margin:0}
+.empty button{min-height:44px;padding:0 20px;border-radius:8px;border:0;background:#1F4D3A;color:#fff;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
+#proposer{background:#fff;border-top:1px solid #DCE3DD;border-bottom:1px solid #DCE3DD}
+#proposer .wrap{padding-top:64px;padding-bottom:64px;display:flex;flex-wrap:wrap;gap:40px}
+.col-text{flex:1 1 320px;display:flex;flex-direction:column;gap:14px}
+.col-text p{margin:0;color:#4A5750}
+form{flex:1 1 360px;display:flex;flex-direction:column;gap:16px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+label{display:flex;flex-direction:column;gap:6px;font-weight:500}
+input,select,textarea{min-height:44px;padding:0 12px;border:1px solid #6F8277;border-radius:8px;font-family:inherit;font-size:16px;color:#17201B;background:#fff}
+textarea{padding:10px 12px;resize:vertical}
+form .btn{align-self:flex-start}
+#etapes .wrap{padding-top:40px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.step{display:flex;flex-direction:column;gap:10px}
+.step .num{width:44px;height:44px;border-radius:50%;background:#1F4D3A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+.step h3{font-size:20px;font-family:'DM Sans',system-ui,sans-serif}
+.step p{margin:0;color:#4A5750}
+#contact{background:#fff;border-top:1px solid #DCE3DD}
+#contact .wrap{padding-top:64px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+#contact .intro{display:flex;flex-direction:column;gap:10px;max-width:640px}
+#contact .intro p{margin:0;color:#4A5750}
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.contact-card{background:#F4F6F2;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:4px}
+.contact-card .label{font-size:14px;font-weight:700;color:#4A5750}
+.contact-card a,.contact-card .value{font-size:20px;font-weight:700;color:#1F4D3A;text-decoration:none;overflow-wrap:anywhere}
+footer{background:#17201B;color:#D5DDD7}
+footer .wrap{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+:focus-visible{outline:3px solid #A8551A;outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap">
+<a class="logo" href="#top">Immobilier Plateaux</a>
+<nav>
+<a href="#biens">Nos biens</a>
+<a href="#proposer">Proposer un terrain</a>
+<a href="#etapes">Comment ça marche</a>
+<a class="cta" href="#contact">Nous contacter</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+<div class="wrap">
+<p class="eyebrow">Région des Plateaux · Togo</p>
+<h1>Trouvez le terrain ou la maison qui vous convient dans les Plateaux.</h1>
+<p class="lead">Terrains, maisons et locaux à vendre ou à louer à Atakpamé, Kpalimé, Notsé, Badou et dans toute la région. Une équipe locale vous accompagne de la visite jusqu'à la signature.</p>
+<div class="actions">
+<a class="btn btn-accent" href="#biens">Voir les biens</a>
+<a class="btn btn-outline-light js-wa" href="#contact">Écrire sur WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section id="biens">
+<div class="wrap">
+<div class="head-row">
+<h2 class="section-title">Nos biens</h2>
+<p class="count" id="count" aria-live="polite"></p>
+</div>
+<div class="filters">
+<div class="filter-row"><span class="filter-label">Type</span><span id="type-chips" class="filter-row"></span></div>
+<div class="filter-row"><span class="filter-label">Ville</span><span id="ville-chips" class="filter-row"></span></div>
+</div>
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty" hidden>
+<p id="empty-text">Aucun bien ne correspond à cette sélection pour le moment.</p>
+<button type="button" id="reset">Voir tous les biens</button>
+</div>
+</div>
+</section>
+
+<section id="proposer">
+<div class="wrap">
+<div class="col-text">
+<h2 class="section-title">Vous avez un terrain ou une maison à proposer ?</h2>
+<p>Remplissez le formulaire : votre message part directement sur WhatsApp avec toutes les informations. Nous vérifions les détails avec vous avant de publier votre annonce sur le site.</p>
+<p>Vous pouvez aussi nous appeler au <span class="js-phone-text"></span>.</p>
+</div>
+<form id="form" onsubmit="return false">
+<div class="fields">
+<label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
+<label>Votre téléphone<input type="tel" name="tel" autocomplete="tel"></label>
+<label>Ville
+<select name="ville">
+<option>Atakpamé</option>
+<option>Kpalimé</option>
+<option>Notsé</option>
+<option>Badou</option>
+<option>Autre ville des Plateaux</option>
+</select>
+</label>
+<label>Type de bien
+<select name="type">
+<option>Terrain</option>
+<option>Maison</option>
+<option>Local commercial</option>
+<option>Bien à louer</option>
+</select>
+</label>
+<label>Surface (m²)<input type="text" name="surface" inputmode="numeric"></label>
+<label>Prix souhaité (FCFA)<input type="text" name="prix" inputmode="numeric"></label>
+</div>
+<label>Description (quartier, accès, documents disponibles)<textarea name="desc" rows="4"></textarea></label>
+<a class="btn btn-primary" id="send-wa" href="#">Envoyer sur WhatsApp</a>
+</form>
+</div>
+</section>
+
+<section id="etapes">
+<div class="wrap">
+<h2 class="section-title">Comment ça marche</h2>
+<div class="steps">
+<div class="step"><span class="num">1</span><h3>Vous nous contactez</h3><p>Dites-nous ce que vous cherchez : type de bien, ville, budget. Nous vous répondons rapidement.</p></div>
+<div class="step"><span class="num">2</span><h3>Nous organisons la visite</h3><p>Nous vous retrouvons sur place pour visiter le bien et répondre à toutes vos questions.</p></div>
+<div class="step"><span class="num">3</span><h3>Nous vous accompagnons</h3><p>Nous vous guidons dans les démarches jusqu'à la conclusion de l'achat ou de la location.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<div class="intro">
+<h2 class="section-title">Parlons de votre projet</h2>
+<p>Un terrain à vendre, une maison à louer, un bien repéré sur le site que vous voulez faire vérifier avant d'acheter ? Écrivez-nous ou appelez-nous.</p>
+</div>
+<div class="contacts">
+<div class="contact-card"><span class="label">WhatsApp</span><a class="js-wa js-wa-text" href="#"></a></div>
+<div class="contact-card"><span class="label">Téléphone</span><a class="js-phone" href="#"></a></div>
+<div class="contact-card"><span class="label">Courriel</span><a class="js-email" href="#"></a></div>
+<div class="contact-card"><span class="label">Facebook</span><span class="value js-facebook"></span></div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+<span>© <span class="js-agence"></span> · Région des Plateaux, Togo</span>
+<span>Terrains, maisons et locaux</span>
+</div>
+</footer>
+
+<script>
+/* ============================================================
+   RÉGLAGES À MODIFIER (coordonnées du site)
+   ============================================================ */
+var CONFIG = {
+  agence: "Gilbert Akakpo",                 // nom affiché en bas de page (à remplacer par le nom de votre agence)
+  whatsapp: "228994710841",                 // numéro WhatsApp avec l'indicatif 228, sans espaces ni "+" (à vérifier)
+  whatsappAffiche: "99 47 108 41",
+  telephone: "22870395751",                 // numéro de téléphone avec l'indicatif 228
+  telephoneAffiche: "70 39 57 51",
+  email: "akakpokodjogilbert@gmail.com",
+  facebookNom: "Gilbert Akakpo",
+  facebookUrl: ""                           // collez ici le lien de votre page Facebook pour le rendre cliquable
+};
+
+/* ============================================================
+   ANNONCES : une ligne par bien. Pour ajouter un bien, copiez
+   une ligne et changez les valeurs.
+   type : "terrain", "maison" ou "location"
+   photo : lien ou nom d'un fichier image (laisser "" pour aucun)
+   ============================================================ */
+var BIENS = [
+  // Aucun bien pour l'instant. Pour en ajouter un, copiez la ligne ci-dessous
+  // entre les crochets (sans les //) et remplacez les valeurs, séparées par des virgules :
+  // { type: "terrain", titre: "Titre du bien", ville: "Atakpamé", surface: "[SURFACE] m²", prix: "[PRIX] FCFA", photo: "" }
+];
+
+var TYPES = [
+  { id: "all", label: "Tous" },
+  { id: "terrain", label: "Terrains" },
+  { id: "maison", label: "Maisons" },
+  { id: "location", label: "À louer" }
+];
+var LABELS = { terrain: "Terrain", maison: "Maison", location: "À louer" };
+var VILLES = ["Atakpamé", "Kpalimé", "Notsé", "Badou"];
+
+var state = { type: "all", ville: "all" };
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  });
+}
+
+function renderChips(containerId, items, current, onPick) {
+  var box = document.getElementById(containerId);
+  box.innerHTML = "";
+  items.forEach(function (it) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip";
+    b.textContent = it.label;
+    b.setAttribute("aria-pressed", String(current === it.id));
+    b.addEventListener("click", function () { onPick(it.id); });
+    box.appendChild(b);
+  });
+}
+
+function render() {
+  renderChips("type-chips", TYPES, state.type, function (id) { state.type = id; render(); });
+  var villeItems = [{ id: "all", label: "Toutes" }].concat(VILLES.map(function (v) { return { id: v, label: v }; }));
+  renderChips("ville-chips", villeItems, state.ville, function (id) { state.ville = id; render(); });
+
+  var visibles = BIENS.filter(function (b) {
+    return (state.type === "all" || b.type === state.type) && (state.ville === "all" || b.ville === state.ville);
+  });
+
+  document.getElementById("count").textContent = visibles.length + (visibles.length > 1 ? " biens" : " bien");
+  var aucunBien = BIENS.length === 0;
+  document.getElementById("empty").hidden = visibles.length !== 0;
+  document.getElementById("empty-text").textContent = aucunBien
+    ? "Les premiers biens arrivent bientôt. Revenez nous voir, ou proposez votre terrain ci-dessous."
+    : "Aucun bien ne correspond à cette sélection pour le moment.";
+  document.getElementById("reset").hidden = aucunBien;
+  document.getElementById("count").hidden = aucunBien;
+  document.querySelector(".filters").hidden = aucunBien;
+
+  var icon = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>';
+  var pin = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>';
+
+  document.getElementById("grid").innerHTML = visibles.map(function (b) {
+    var photo = b.photo
+      ? '<img src="' + esc(b.photo) + '" alt="' + esc(b.titre) + ' à ' + esc(b.ville) + '">'
+      : icon + "<span>Photo à ajouter</span>";
+    return '<article class="card">' +
+      '<div class="photo">' + photo + "</div>" +
+      '<div class="card-body">' +
+      '<span class="tag">' + esc(LABELS[b.type]) + "</span>" +
+      "<h3>" + esc(b.titre) + "</h3>" +
+      '<p class="place">' + pin + esc(b.ville) + "</p>" +
+      '<div class="meta"><span>' + esc(b.surface) + '</span><span class="price">' + esc(b.prix) + "</span></div>" +
+      '<a class="btn btn-outline" href="#contact">Demander une visite</a>' +
+      "</div></article>";
+  }).join("");
+}
+
+document.getElementById("reset").addEventListener("click", function () {
+  state.type = "all";
+  state.ville = "all";
+  render();
+});
+
+/* Coordonnées */
+function waLink(texte) {
+  return "https://wa.me/" + CONFIG.whatsapp + (texte ? "?text=" + encodeURIComponent(texte) : "");
+}
+document.querySelectorAll(".js-wa").forEach(function (a) { a.href = waLink(); });
+document.querySelectorAll(".js-wa-text").forEach(function (a) { a.textContent = CONFIG.whatsappAffiche; });
+document.querySelectorAll(".js-phone").forEach(function (a) {
+  a.href = "tel:+" + CONFIG.telephone;
+  a.textContent = CONFIG.telephoneAffiche;
+});
+document.querySelectorAll(".js-phone-text").forEach(function (s) { s.textContent = CONFIG.telephoneAffiche; });
+document.querySelectorAll(".js-email").forEach(function (a) {
+  a.href = "mailto:" + CONFIG.email;
+  a.textContent = CONFIG.email;
+});
+document.querySelectorAll(".js-agence").forEach(function (s) { s.textContent = CONFIG.agence; });
+document.querySelectorAll(".js-facebook").forEach(function (s) {
+  if (CONFIG.facebookUrl) {
+    var a = document.createElement("a");
+    a.href = CONFIG.facebookUrl;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = CONFIG.facebookNom;
+    s.replaceWith(a);
+  } else {
+    s.textContent = CONFIG.facebookNom;
+  }
+});
+
+/* Formulaire : prépare le message WhatsApp */
+var form = document.getElementById("form");
+var sendBtn = document.getElementById("send-wa");
+function updateSend() {
+  var f = form.elements;
+  var msg = "Bonjour, je souhaite proposer un bien pour publication sur le site.\n" +
+    "Nom : " + f.nom.value + "\n" +
+    "Téléphone : " + f.tel.value + "\n" +
+    "Ville : " + f.ville.value + "\n" +
+    "Type de bien : " + f.type.value + "\n" +
+    "Surface : " + f.surface.value + " m²\n" +
+    "Prix souhaité : " + f.prix.value + " FCFA\n" +
+    "Description : " + f.desc.value;
+  sendBtn.href = waLink(msg);
+}
+form.addEventListener("input", updateSend);
+form.addEventListener("change", updateSend);
+
+render();
+updateSend();
+</script>
+</body>
+</html>
